@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+<div class="well">
+    <h1>Listing Pages</h1>
+
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Body</th>
+          <th>Category</th>
+          <th>Slug</th>
+          <th colspan="3" class="xx">Actions</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @pages.each do |page| %>
+          <tr>
+            <td><%= page.title %></td>
+            <td><%= page.body %></td>
+            <td><%= page.category.try :name %></td>
+            <td><%= slug_url page %></td>
+            <td><%= link_to 'Show', admin_page_path(page) %></td>
+            <td><%= link_to 'Edit', edit_admin_page_path(page) %></td>
+            <td><%= link_to 'Destroy', admin_page_path(page), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+
+    <br>
+
+    <%= link_to 'New Page', new_admin_page_path, class: [:btn,:'btn-primary'] %>
+</div>

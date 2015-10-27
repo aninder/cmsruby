@@ -1,0 +1,15 @@
+<h1>Menus</h1>
+<% if(notice) %>
+    <p class="alert alert-success "><%= notice %></p>
+<%end %>
+
+<ul>
+  <% @menus.each do |m| %>
+   <li>
+     <%=m.name%>
+     <%=link_to 'edit',edit_admin_menu_path(m)%>
+   </li>
+  <%end%>
+</ul>
+
+<%=link_to 'New Menu', new_admin_menu_path%>

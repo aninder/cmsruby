@@ -1,0 +1,19 @@
+%p#notice= notice
+%p
+  %strong Title:
+  = @page.title
+%p
+  %strong Created:
+  %em
+    = time_ago_in_words @page.created_at
+%p
+  %strong Body:
+  = simple_format @page.body
+
+%p
+  %strong Category:
+  = @page.category.name
+
+= link_to 'Edit', edit_admin_page_path(@page)
+|
+= link_to 'Back', admin_pages_path
