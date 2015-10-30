@@ -1,0 +1,22 @@
+{
+  "name": "cmsruby",
+  "version": "0.0.0",
+  "authors": [
+    "aninder <aninder@gmail.com>"
+  ],
+  "description": "bower file for cmsruby",
+  "moduleType": [
+    "globals"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "animate.css": "~3.4.0"
+  }
+}

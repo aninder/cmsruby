@@ -2,17 +2,20 @@
   %p
     =f.text_field :name, class:"form-control",placeholder:"menu"
   %p
-    .alert.alert-info Menu Items
-    = f.fields_for(:menu_items) do |menu_items_form|
-      %p.well
-        =menu_items_form.hidden_field :id
-        =menu_items_form.label :title
-        = menu_items_form.text_field :title
-        =menu_items_form.label :url
-        = menu_items_form.text_field :url
-        - unless menu_items_form.object.new_record?
-          =menu_items_form.check_box('_destroy')
-          =menu_items_form.label('_destroy', 'Remove')
+    .alert.alert-info
+      Menu Items
+      %button.pull-right.btn.btn-sm.btn-danger#add_menu_item Add New Menu Item
+    #menu_items
+      = f.fields_for(:menu_items) do |menu_items_form|
+        %p.well
+          =menu_items_form.hidden_field :id
+          =menu_items_form.label :title
+          = menu_items_form.text_field :title
+          =menu_items_form.label :url
+          = menu_items_form.text_field :url
+          - unless menu_items_form.object.new_record?
+            =menu_items_form.check_box('_destroy')
+            =menu_items_form.label('_destroy', 'Remove')
 
   %p
     =f.submit class:[:btn,'btn-success']

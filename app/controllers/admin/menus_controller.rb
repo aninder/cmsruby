@@ -7,7 +7,6 @@ module Admin
 
     def new
       @menu = Menu.new
-      3.times{@menu.menu_items.build}
     end
 
     def create
@@ -28,7 +27,6 @@ module Admin
     end
 
     def edit
-      3.times{@menu.menu_items.build}
     end
 
     def destroy
